@@ -15,15 +15,15 @@ class usuario extends db
 
 
   //Funciones para la inserccion
-  public function insertarUser($email,$contrasenya,$nombre,$apellidos){
+  public function insertarUser($email,$pass,$nombre,$apellidos){
 
     if ($this->hayError()==true){
         return null;
 
     }else{
-	
-      $sqlInserction="INSERT INTO usuarios(id,usuario,nombre,apellidos,email,rol,pass) VALUES (NULL,'".$email."','".$nombre."','".$apellidos."','".$email."',NULL,'".sha1($contrasenya)."')";
-		
+
+      $sqlInserction="INSERT INTO usuarios(id,usuario,nombre,apellidos,email,rol,pass) VALUES (NULL,'".$email."','".$nombre."','".$apellidos."','".$email."',NULL,'".sha1($pass)."')";
+
       $this->conexion()->query($sqlInserction);
     }
 
